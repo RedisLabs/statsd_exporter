@@ -278,6 +278,7 @@ func main() {
 	kingpin.HelpFlag.Short('h')
 	kingpin.Parse()
 	logger := promslog.New(promslogConfig)
+	registry.MustRegister(versioncollector.NewCollector("statsd_exporter"))
 
 	parser := line.NewParser()
 	if *dogstatsdTagsEnabled {
@@ -293,7 +294,6 @@ func main() {
 		parser.EnableSignalFXParsing()
 	}
 	if !*disableGoMetrics {
-		registry.MustRegister(versioncollector.NewCollector("statsd_exporter"))
 		registry.MustRegister(collectors.NewGoCollector())
 	}
 

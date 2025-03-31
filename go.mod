@@ -3,6 +3,7 @@ module github.com/prometheus/statsd_exporter
 go 1.22
 
 require (
+	github.com/alecthomas/kingpin/v2 v2.4.0
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da
 	github.com/prometheus/client_golang v1.20.5
 	github.com/prometheus/client_model v0.6.1
@@ -13,7 +14,6 @@ require (
 )
 
 require (
-	github.com/alecthomas/kingpin/v2 v2.4.0 // indirect
 	github.com/alecthomas/units v0.0.0-20240626203959-61d1e3462e30 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
